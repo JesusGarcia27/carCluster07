@@ -1,0 +1,359 @@
+:root{
+    --header-height: 60px;
+    /* COLORS */
+    --primary-color: hsl(354, 78%, 60%);
+    --body-color: hsl(206, 4%, 97%);
+    --text-color: hsl(0, 0%, 20%);
+    --title-color: hsl(0,0%,10%);
+    --bg-color: hsl(0,0%,100%);
+    --imgbg-color: hsl(0,0%,90%);
+    /* FONTS */
+    --body-font: 'Open Sans', sans-serif;
+    --title-font: 'Poppins', sans-serif;
+    /* FONTS SIZE */
+    --big-font: 2rem;
+    --medium-font: 1.5rem;
+    --normal-font: 1rem;
+    --small-font: .8rem;
+    --tiny-font: .6rem;
+    /* FONTS WEIGHT */
+    --bold-font: 700;
+    --sbold-font: 600;
+    --regular-font:400;
+    --light-font:300;
+    /* SPACING */
+    --sp-0-5: .5rem;
+    --sp-0-75: .75rem;
+    --sp-1: 1rem;
+    --sp-1-5: 1.5rem;
+    --sp-2: 2rem;
+    --sp-2-5: 2.5rem;
+    --sp-3: 3rem;
+    /* Z INDEX */
+    --z-fixed: 100;
+    --z-modal: 200;
+    /* SVG */
+    --svg-size: 1.25rem;
+  }
+
+@media (min-width: 992px) {
+    :root {
+        --big-font: 2.5rem;
+        --medium-font: 2rem;
+        --normal-font: 1.25rem;
+        --small-font: 1rem;
+        --tiny-font: .8rem;
+        --svg-size: 1.4rem;
+    }
+}
+
+html,
+body {
+    height: 100%;
+}
+
+html {
+    font-size: 16px;
+    line-height: 1.5;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+button,
+input,
+textarea {
+    font-family: var(--body-font);
+    font-size: var(--normal-font);
+    font-weight: var(--font-normal);
+    color: var(--text-color);
+    background-color: var(--body-color);
+}
+
+body {
+    font-family: var(--body-font);
+    font-size: var(--normal-font);
+    font-weight: var(--regular-font);
+    color: var(--text-color);
+    background-color: var(--body-color);
+}
+
+body.dark{
+    --body-color: hsl(206, 4%, 5%);
+    --text-color: hsl(0, 0%, 80%);
+    --title-color: hsl(0,0%,90%);
+    --bg-color: hsl(0,0%,10%);
+  }
+
+a {
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--title-font);
+    font-weight: var(--sbold-font);
+    color: var(--title-color);
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+button {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    user-select: none;
+    cursor: pointer;
+}
+
+/* Global */
+.section {
+    padding: var(--sp-2) 0 var(--sp-1);
+}
+
+.section--title,
+.container {
+    max-width: 1024px;
+    margin: 0 1rem;
+}
+
+
+
+@media (max-width: 768px) {
+  
+    .inicio {
+        flex-flow: column-reverse;
+        margin: auto;
+    }
+    
+   
+    .boton {
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        padding: 10px 30px;
+    }
+      
+    .boton-pequeño {
+        padding: 5px 15px;
+    }
+
+
+
+    #features {
+        
+        text-align: center;
+      }
+
+      
+    #features .cajas {
+        display: flex;
+        flex-direction: column;
+          justify-content: center;
+      }
+
+    #features .caja-1,
+    #features .caja-3,
+    #features .caja-2 {
+        height: 100px;
+        background-image: none;
+    }
+
+
+    #features .caja-1 img,
+    #features .caja-3 img,
+    #features .caja-2 img {
+        width: 100%;
+        height: auto;
+    }
+
+
+}
+
+/* ESTILOS DEL HOME  */
+
+section {
+    min-height: 100vh;
+    padding: 0 9%;
+    padding-top: 7.5rem;
+    padding-bottom: 2rem;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: .8rem 3rem;
+    border-radius: 5rem;
+    background: var(--primary-color);
+    color: var(--bg-color);
+    font-size: var(--font-medium);
+    cursor: pointer;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+    transition: all .3s linear;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+}
+
+.inicio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('../componentes/img/51.png') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.inicio .image img {
+    width: 300rem;
+    animation: float 3s linear infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0rem);
+    }
+    50% {
+        transform: translateY(-2rem);
+    }
+}
+
+.inicio .contenido h3 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 3.5rem;
+    text-transform: uppercase;
+}
+
+.inicio .contenido h3 span {
+    color: var(--bg-color);
+}
+
+.inicio .contenido p {
+    font-size: var(--sp-1);
+    color: var(--bg-color);
+    padding: 1rem 0;
+}
+
+
+/* features */
+
+.boton {
+    display: inline-block;
+    font-size: 15px;
+    padding: 15px 50px;
+    cursor: pointer;
+    font-weight: var(--font-medium);
+    letter-spacing: 1px;
+    border-radius: 30px;
+}
+
+.boton-pequeño {
+    padding: 10px 30px;
+    border-radius: 10px;
+}
+
+.boton-luz {
+    background: var(--primary-color);
+    color: var(--bg-color);
+}
+
+.boton-luz:hover {
+    background: rgba(255, 255, 255, 0.432);
+    color: var(--primary-color);
+    font-size: var(--sp-2);
+    border: 1px solid var(--primary-color);
+}
+
+#features {
+    padding: 50px 0;
+}
+#features h2 {
+    text-align: center;
+    padding-bottom: 60px;
+}
+
+#features .cajas {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-rows: minmax(100px, auto);
+    gap: 1rem;
+}
+
+#features .boxes {
+    text-align: center;
+}
+
+#features a {
+    margin-top: 50px;
+}
+
+#features .caja-1 {
+    background: url('../componentes/img/52.png');
+    border-radius: 20px;
+   
+}
+
+#features .caja-2 {
+    background: url('../componentes/img/54.png');
+    border-radius: 20px;
+}
+
+#features .caja-3 {
+    background: url('../componentes/img/53.png');
+    border-radius: 20px;
+}
+
+ 
+#features .caja-1,
+#features .caja-3,
+#features .caja-2 {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 800px;
+}
+
+#features .caja-1 img,
+#features .caja-3 img,
+#features .caja-2 img {
+    width: 100%;
+}
+
+
+.image__parallax {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url(../componentes/img/55.png);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.image__stop {
+    position: relative;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    color: var(--footer-color);
+}
